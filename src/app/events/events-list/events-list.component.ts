@@ -21,9 +21,9 @@ event1 = {
     }
   }
 
-  handleEventClicked(data){
-    console.log(data);  
-  }
+  // handleEventClicked(data){
+  //   console.log(data);  
+  // }
 
   constructor() { }
 
