@@ -20,6 +20,11 @@ event1 = {
       country: 'England'
     }
   }
+
+  handleEventClicked(data){
+    console.log(data);  
+  }
+
   constructor() { }
 
   ngOnInit() {
