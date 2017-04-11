@@ -21,10 +21,11 @@
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
     "core-js": "^2.4.1",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.7.6",
     "ng2f-bootstrap": "^0.0.4",
-    "ng2f-server": "^0.2.3"
+    "ng2f-server": "^0.2.3",
+    "rxjs": "^5.1.0",
+    "toastr": "^2.1.2",
+    "zone.js": "^0.7.6"
   },
   "devDependencies": {
     "@angular/cli": "1.0.0-rc.4",
