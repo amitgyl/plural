@@ -35,7 +35,7 @@ events : any[]
   }
 
   handleThumbnailClick(eventName){
-    this.toastr.success(eventName)
+   // this.toastr.success(eventName)
   }
 
 }
