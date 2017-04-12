@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../shared/event.service';
 import { ToastrService } from '../../common/toastr.service';
-
+import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-events-list',
   templateUrl: './events-list.component.html',
@@ -10,28 +10,13 @@ import { ToastrService } from '../../common/toastr.service';
 export class EventsListComponent implements OnInit {
 
 events : any[]
-  // event1 = {
-  //   id: 1,
-  //   name: 'Angular Connect',
-  //   date: '9/26/2036',
-  //   time: '10:00 am',
-  //   price: 599.99,
-  //   imageUrl: '/app/assets/images/angularconnect-shield.png',
-  //   location: {
-  //     address: '1057 DT',
-  //     city: 'London',
-  //     country: 'England'
-  //   }
-  // }
-  // handleEventClicked(data){
-  //   console.log(data);  
-  // }
 
-  constructor(private eventService: EventService, private toastr: ToastrService) {
+  constructor(private eventService: EventService, private toastr: ToastrService, private route:ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.events = this.eventService.getEvents() 
+    // this.eventService.getEvents().subscribe(events => {this.events = events}) 
+    this.events = this.route.snapshot.data['events']
   }
 
   handleThumbnailClick(eventName){
