@@ -4,18 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {RouterModule} from '@angular/router';
+import { RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
-// import {  } from './events/events-list/events-list.component';
-//import {  } from './events/event-thumbnail/event-thumbnail.component';
 import { NavbarComponent } from './nav/navbar/navbar.component';
-//import {  } from './events/shared/event.service';
 import { ToastrService } from './common/toastr.service';
-//import {  } from './events/event-details/event-details/event-details.component';
 import { appRoutes } from './routes';
-// import {  } from './events/create-event/create-event.component';
-// import {  } from './events/event-details/event-route-activator.service';
-// import {  } from './events/events-list-resolver.service';
+import { AuthService } from './user/auth.service';
 
 import {
   EventsListComponent,
@@ -25,7 +19,7 @@ import {
   CreateEventComponent,
   EventRouteActivatorService,
   EventsListResolverService
-} from './events/index'
+} from './events/index';
 
 @NgModule({
   declarations: [
@@ -48,6 +42,7 @@ import {
     ToastrService,
     EventRouteActivatorService,
     EventsListResolverService,
+    AuthService,
     { 
       provide: 'canDeactivateCreateEvent', 
       useValue: checkDirtyState 
@@ -57,7 +52,7 @@ import {
 })
 export class AppModule { }
 
-function checkDirtyState(component:CreateEventComponent) {
+export function checkDirtyState(component:CreateEventComponent) {
   if (component.isDirty)
     return window.confirm('You have not saved this event, do you really want to cancel?')
   return true
